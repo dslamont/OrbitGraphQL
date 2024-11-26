@@ -1,6 +1,6 @@
-@OrbitGraphQL_HostAddress = http://localhost:5117
+@OrbitGraphQL_HostAddress = http://localhost:7080
 
-GET {{OrbitGraphQL_HostAddress}}/weatherforecast/
+GET {{OrbitGraphQL_HostAddress}}/home/
 Accept: application/json
 
 ###
