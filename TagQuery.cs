@@ -9,10 +9,11 @@ namespace OrbitGraphQL
     {
         public TagQuery(ITagService tagService)
         {
-            Field<ListGraphType<TagDetailsType>>(Name = "Tags", resolve: x => tagService.GetTags());
-            Field<ListGraphType<TagDetailsType>>(Name = "Tag",
-                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "id" }),
-                resolve: x => tagService.GetTag(x.GetArgument<int>("id")));
+            //Tags
+            Field<ListGraphType<TagDetailsType>> ("Tags").Description("Tag Collection").Resolve(x => tagService.GetTags());
+
+            //Tag
+            Field<ListGraphType<TagDetailsType>> ("Tag").Description("Individual Tag").Argument<IntGraphType>("id").Resolve (x => tagService.GetTag(x.GetArgument<int>("id")));
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OrbitGraphQL.Controllers
 {
@@ -6,9 +7,11 @@ namespace OrbitGraphQL.Controllers
     {
         // 
         // GET: /HelloWorld/
-        public string Index()
+        [Route("")]
+        [Route("Home")]
+        public IActionResult Index()
         {
-            return "GraphQL Test";
+            return Ok("Orbit GraphQL");
         }
     }
 }
